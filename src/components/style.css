@@ -1,23 +1,29 @@
-.nav{
-    width: 1500px; 
-    margin-left: 0px;
-    margin-right: 0px;
+.nav {
+  width: 1500px;
+  margin-left: 0px;
+  margin-right: 0px;
 
-  }
-  .pic{
-    width:100px;
-    height: 70px;
-  }
-body{
-  background-color:rgb(250, 250, 250); ;
 }
- .white-text{
-font-size: 25px;
-margin-left: 50px;
-margin-top: 20px;
- }
 
- #btn{
+.pic {
+  width: 100px;
+  height: 70px;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+  text-align: center;
+
+}
+
+.white-text {
+  font-size: 25px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#btn {
+
   width: 500px;
   padding: 12px 20px;
   margin-left: 500px;
@@ -25,8 +31,9 @@ margin-top: 20px;
   display: inline-block;
   border: 1px solid rgb(90, 218, 186);
   box-sizing: border-box;
-  align-self:center;
-  color: rgb(90, 218, 186);;
+  align-self: center;
+  color: rgb(90, 218, 186);
+  ;
 }
 
 /* button {
@@ -42,3 +49,12 @@ margin-top: 20px;
 button:hover {
   opacity: 0.8;
 } */
+input[type=text],input[type=number]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(90, 218, 186);
+  box-sizing: border-box;
+  align-self:center;
+}

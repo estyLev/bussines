@@ -89,10 +89,10 @@ class Manager extends React.Component<{}, MyState> {
         <input type="button" value="delete" onClick={this.deleteEvent} className="btn"/>
         <input type="button" value="add" onClick={this.addEvent} className="btn"/>
         <input type="button" value="edit" onClick={this.editEvent} className="btn"/>
-        <br />
+        <br /><br />
         {this.state.flagDlete && (<form onSubmit={this.deleteProduct}>
           <input type="number" placeholder="enter id product to delete"></input><br />
-          <button type="submit">ok</button>
+          <button type="submit" className="btn">ok</button>
         </form>)}
         {this.state.flagAdd  &&(
           <form onSubmit={this.addProduct}>
@@ -110,7 +110,7 @@ class Manager extends React.Component<{}, MyState> {
             <br />
             <input type="number" placeholder="enter product units" id="units"></input>
             <br />
-            <button type="submit">ok</button>
+            <button type="submit" className="btn">ok</button>
           </form>
         )}
         {this.state.flagEdit &&(
@@ -129,7 +129,7 @@ class Manager extends React.Component<{}, MyState> {
             <br />
             <input type="number" placeholder="enter product units" id="units"></input>
             <br />
-            <button type="submit">ok</button>
+            <button type="submit" className="btn">ok</button>
           </form>          )}
       </>
     );
