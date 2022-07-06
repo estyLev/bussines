@@ -86,9 +86,9 @@ class Manager extends React.Component<{}, MyState> {
   render() {
     return (
       <>
-        <input type="button" value="delete" onClick={this.deleteEvent} />
-        <input type="button" value="add" onClick={this.addEvent} />
-        <input type="button" value="edit" onClick={this.editEvent} />
+        <input type="button" value="delete" onClick={this.deleteEvent} className="btn"/>
+        <input type="button" value="add" onClick={this.addEvent} className="btn"/>
+        <input type="button" value="edit" onClick={this.editEvent} className="btn"/>
         <br />
         {this.state.flagDlete && (<form onSubmit={this.deleteProduct}>
           <input type="number" placeholder="enter id product to delete"></input><br />

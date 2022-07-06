@@ -15,17 +15,19 @@ margin-left: 50px;
 margin-top: 20px;
  }
 
- input[type=text], input[type=password],input[type=number]{
-  width: 50%;
+ #btn{
+  width: 500px;
   padding: 12px 20px;
+  margin-left: 100px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(90, 218, 186);
   box-sizing: border-box;
   align-self:center;
+  color: rgb(90, 218, 186);;
 }
 
-button {
+/* button {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
@@ -37,4 +39,4 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
+} */
