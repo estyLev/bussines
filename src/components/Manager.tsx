@@ -94,8 +94,9 @@ class Manager extends React.Component<{}, MyState> {
           <input type="number" placeholder="enter id product to delete"></input><br />
           <button type="submit">ok</button>
         </form>)}
-        {this.state.flagAdd && (
+        {this.state.flagAdd  &&(
           <form onSubmit={this.addProduct}>
+             <h2>add form</h2> 
             <input type="text" placeholder="enter product name" id="name"></input>
             <br />
             <input type="number" placeholder="enter product id " id="id"></input>
@@ -112,8 +113,9 @@ class Manager extends React.Component<{}, MyState> {
             <button type="submit">ok</button>
           </form>
         )}
-        {this.state.flagEdit && (
+        {this.state.flagEdit &&(
           <form onSubmit={this.editProduct}>
+             <h2>edit form</h2> 
             <input type="text" placeholder="enter product name" id="name"></input>
             <br />
             <input type="number" placeholder="enter product id " id="id"></input>
