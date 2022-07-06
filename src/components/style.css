@@ -1,0 +1,21 @@
+.nav{
+    width: 1500px; 
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+  .pic{
+    width:100px;
+    height: 70px;
+  }
+
+ .white-text{
+font-size: 25px;
+margin-left: 50px;
+margin-top: 20px;
+ }
+
+  /* #search{
+    background-image: url(/icons8-search-30.png);
+
+  } */
