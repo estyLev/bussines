@@ -2,6 +2,7 @@ import React from "react";
 import FormPage from "./Login";
 import { producstList } from "../Data";
 import { MDBBtn } from "mdbreact";
+import './style.css'
 
 
 type MyState = {
@@ -22,7 +23,7 @@ class Manager extends React.Component<{}, MyState> {
   price:number=0;
   category:number=0;
   units:number=0;
-  src:string="logo.png"
+  src:string="/logo.png"
 
   deleteEvent = () => {
     this.setState({
