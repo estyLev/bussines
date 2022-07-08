@@ -94,7 +94,7 @@ class View extends React.Component<{}, MyState> {
             <option value="code">code</option>
             <option value="category">category</option>
             <option value="price">price</option>
-            <option value="kindacode.com">out of stack</option>
+            <option value="out of stack">out of stack</option>
           </select>
           {this.state.selectedOption && (
             <p id="result">search by: {this.state.selectedOption}</p>
