@@ -27,7 +27,7 @@ class View extends React.Component<{}, MyState> {
     searchEvent: function (event: ChangeEvent<Element>): void {
       throw new Error("Function not implemented.");
     },
-    flagPrice: false,
+    flagPrice: false, 
     range: 0,
   };
 
