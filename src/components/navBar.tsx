@@ -4,12 +4,14 @@ import { NavLink } from "react-router-dom";
 import './style.css'
 
 
+
+
 const BreadcrumbPage = () => {
   return (
    
       
       <MDBBreadcrumb color="default-color" className="nav" >
-        <img src="logo.png" width={"150px"}></img>
+        <img src="/logo.png" width={"150px"}></img>
         <NavLink to="/HomePage" className="white-text"> Home</NavLink>
         <NavLink to="/About" className="white-text">  About</NavLink>
         <NavLink to="/View" className="white-text">  View</NavLink>

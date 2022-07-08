@@ -8,6 +8,16 @@ type MyState = {
 };
 
 class View extends React.Component<{},MyState> {
+  /**
+   *
+   */
+  constructor(props:any) {
+    super(props);
+    localStorage.setItem('products',JSON.stringify(producstList.getProducts));
+    console.log(localStorage.getItem('products'));
+    
+    
+  }
   
    state: MyState = { 
     currentProducts: producstList.getProducts
