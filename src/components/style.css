@@ -49,25 +49,34 @@ body {
 button:hover {
   opacity: 0.8;
 } */
-input[type=text],input[type=number]{
+input[type=text],
+input[type=number],
+input[type=password] {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid rgb(90, 218, 186);
   box-sizing: border-box;
-  align-self:center;
+  align-self: center;
 }
-#container{
+
+#container {
   margin-top: 50;
   display: "flex";
   flex-direction: "column";
   align-items: "center";
 }
+
 #select {
   padding: 5;
   width: 200;
 }
+
 #result {
   margin-top: 30;
 }
+/* 
+#home {
+  background-image: url("/bussines/logo.png");
+} */

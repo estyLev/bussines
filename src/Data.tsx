@@ -169,7 +169,7 @@ export class Manager {
 //fiels
 //------------------------------
 let producstList = new ProducstList();
-let manager = new Manager(1234, "esty")
+let manager = new Manager(741258963, "esty")
 let categoryList = new CategoryList()
 
 categoryList.addCategory(10, "computers")
@@ -186,4 +186,4 @@ producstList.addProduct("smartphone", 6, 10, 6000, 1,"/bussines/shutterstock_288
 producstList.addProduct("mouse", 6, 10, 6000, 1,"/bussines/shutterstock_139516253 (1).jpg")
 
 
-export {producstList};
+export {producstList ,manager};

@@ -9,6 +9,7 @@ import Manager from './components/Manager';
 
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import LoginManager from './components/LoginManager';
 
 
 
@@ -21,7 +22,7 @@ function App() {
               <Route path="/About" component={About} exact></Route>
               <Route path="/View" component={View} exact></Route>
               <Route path="/HomePage" component={HomePage} exact></Route>
-              <Route path="/Manager" component={Manager} exact></Route>
+              <Route path="/LoginManager" component={LoginManager} exact></Route>
 
           </Switch>
         </BrowserRouter>

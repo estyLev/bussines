@@ -15,7 +15,7 @@ const BreadcrumbPage = () => {
         <NavLink to="/HomePage" className="white-text"> Home</NavLink>
         <NavLink to="/About" className="white-text">  About</NavLink>
         <NavLink to="/View" className="white-text">  View</NavLink>
-        <NavLink to="/Manager" className="white-text">  Manager</NavLink>
+        <NavLink to="/LoginManager" className="white-text">  Manager</NavLink>
 
       </MDBBreadcrumb>
     
