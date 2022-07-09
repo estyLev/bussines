@@ -143,8 +143,8 @@ class Manager extends React.Component<{}, MyState> {
             </button>
           </form>
         )}
-        {this.state.flagAdd && <Form onsubmit={this.addProduct}></Form>}
-        {this.state.flagEdit && <Form onsubmit={this.editProduct}></Form>}
+        {this.state.flagAdd &&<>  <h2>add form</h2> <Form onsubmit={this.addProduct}></Form></>}
+        {this.state.flagEdit&& <> <h2>edit form</h2> <Form onsubmit={this.editProduct}></Form></>}
       </>
     );
   }

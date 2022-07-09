@@ -8,7 +8,7 @@ function Form({onsubmit}:submitProps) {
     
       return <>
       <form onSubmit={onsubmit}>
-             <h2>edit form</h2> 
+            
             <input type="text" placeholder="enter product name" id="name"></input>
             <br />
             <input type="number" placeholder="enter product id " id="id"></input>
