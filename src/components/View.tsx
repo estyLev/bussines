@@ -27,7 +27,7 @@ class View extends React.Component<{}, MyState> {
     searchEvent: function (event: ChangeEvent<Element>): void {
       throw new Error("Function not implemented.");
     },
-    flagPrice: false, 
+    flagPrice: false,
     range: 0,
   };
 
@@ -35,15 +35,22 @@ class View extends React.Component<{}, MyState> {
     const value = event.target.value;
     this.setState({ selectedOption: value });
 
-    if (value == "name") this.setState({ searchEvent: this.searchByName });
-    else if (value == "code") this.setState({ searchEvent: this.searByCode });
-    else if (value == "category")
+    if (value == "name") {
+      this.setState({ searchEvent: this.searchByName });
+      this.setState({ flagPrice: false });
+    } else if (value == "code") {
+      this.setState({ searchEvent: this.searByCode });
+      this.setState({ flagPrice: false });
+    } else if (value == "category") {
       this.setState({ searchEvent: this.searchByCategory });
-    else if (value == "price") {
+      this.setState({ flagPrice: false });
+    } else if (value == "price") {
       this.setState({ searchEvent: this.searchByPrice });
       this.setState({ flagPrice: true });
+    } else {
+      this.searchOutOfStack();
+      this.setState({ flagPrice: false });
     }
-     else this.searchOutOfStack()
   };
 
   searchByName = (event: React.ChangeEvent<Element>) => {
@@ -67,19 +74,17 @@ class View extends React.Component<{}, MyState> {
   };
   searchByPrice = (event: React.ChangeEvent<Element>) => {
     let price = Number((event.target as HTMLInputElement).value);
-    let temp = producstList.getProductByPrice(price,this.state.range)
-    
+    let temp = producstList.getProductByPrice(price, this.state.range);
+
     this.setState({ currentProducts: temp });
   };
   searchOutOfStack = () => {
-   
-    let temp = producstList.getoutOfStackProducts()
+    let temp = producstList.getoutOfStackProducts();
     this.setState({ currentProducts: temp });
   };
   changeRange = (event: React.ChangeEvent<Element>) => {
     let newRange = Number((event.target as HTMLInputElement).value);
     this.setState({ range: newRange });
-
   };
 
   render() {
@@ -101,7 +106,15 @@ class View extends React.Component<{}, MyState> {
           )}
         </div>
         {this.state.flagPrice && (
-         <><br /><input type="number" onChange={this.changeRange} placeholder="enter a range"></input> <br /></>
+          <>
+            <br />
+            <input
+              type="number"
+              onChange={this.changeRange}
+              placeholder="enter a range"
+            ></input>{" "}
+            <br />
+          </>
         )}
         <input
           type="text"
