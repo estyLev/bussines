@@ -1,0 +1,22 @@
+{
+
+    "categories": [
+      {
+        "code": 100,
+        "name": "computers"
+      },
+      {
+        "code": 200,
+        "name": "usb-drives"
+      },
+      {
+        "code": 300,
+        "name": "cemara"
+      },
+      {
+        "code": 400,
+        "name": "smart-phons"
+      }
+    ]
+  }
+  

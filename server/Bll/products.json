@@ -1,0 +1,76 @@
+{
+    "products": [
+      {
+        "code": 1,
+        "name": "dell-computer",
+        "categoryCode": 10,
+        "price": 3000,
+        "units": 10,
+        "src": "/bussines/laptop-154091.png"
+      },
+      {
+        "code": 2,
+        "name": "lenovo-computer-2000",
+        "categoryCode": 10,
+        "price": 2000,
+        "units": 15,
+        "src": "/bussines/macbook-926425_1920.jpg"
+      },
+      {
+        "code": 3,
+        "name": "sandisk-usb 8gb",
+        "categoryCode": 20,
+        "price": 30,
+        "units": 150,
+        "src": "/bussines/usb.jpg"
+      },
+      {
+        "code": 4,
+        "name": "sandisk-cabel",
+        "categoryCode": 20,
+        "price": 15,
+        "units": 85,
+        "src": "/bussines/cabel.jpg "
+      },
+      {
+        "code": 5,
+        "name": "lenovo-computer-2012",
+        "categoryCode": 10,
+        "price": 2500,
+        "units": 25,
+        "src": "/bussines/stock-photo-thin-laptop-on-office-desk-61225804.jpg"
+      },
+      {
+        "code": 6,
+        "name": "dell-touch-cocmputer",
+        "categoryCode": 10,
+        "price": 4500,
+        "units": 8,
+        "src": "/bussines/sale.png"
+      },
+      {
+        "code": 7,
+        "name": "cemara",
+        "categoryCode": 30,
+        "price": 1500,
+        "units": 12,
+        "src": "/bussines/shutterstock_67026268.jpg"
+      },
+      {
+        "code": 8,
+        "name": "smartphone",
+        "categoryCode": 40,
+        "price": 1450,
+        "units": 20,
+        "src": "/bussines/shutterstock_28846064.jpg"
+      },
+      {
+        "code": 9,
+        "name": "mouse",
+        "categoryCode": 20,
+        "price": 35,
+        "units": 50,
+        "src": "/bussines/mouse.jpg"
+      }
+    ]
+}
