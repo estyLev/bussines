@@ -1,4 +1,4 @@
-name: Build Docker Image and Upload release assets
+name: 🔖 Create release  
 
 on:
   push:
@@ -10,14 +10,20 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - name: 'Login to GitHub Container Registry'
-        uses: docker/login-action@v1
+      - name: 📂 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🔵 Setup NodeJS
+        uses: actions/setup-node@v3
         with:
-          registry: ghcr.io
-          username: ${{github.owner}}
-          password: ${{secrets.GITHUB_TOKEN}}
+          node-version: '18.x'
           
-      - name: Create Release
+      - name: ⏬ Install Dependencies
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+          
+      - name: 🔖 Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -28,7 +34,7 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
+      - name: ⬆️ Upload Release Asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
