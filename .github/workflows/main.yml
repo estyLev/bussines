@@ -10,8 +10,9 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      deployments: write
+      contents: 'read'
+      id-token: 'write'
+      issues: 'write'
     
     steps:
       - name: 📂 Checkout code
