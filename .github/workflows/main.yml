@@ -14,14 +14,9 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{github.actor}}
+          username: ${{github.owner}}
           password: ${{secrets.GITHUB_TOKEN}}
-
-      - name: 'Build Image'
-        run: |
-          docker build . --tag ghcr.io/skyvar/hawkeye360:latest
-          docker push ghcr.io/skyvar/hawkeye360:latest
-
+          
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
