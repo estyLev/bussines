@@ -1,0 +1,23 @@
+name: 🔖 Echo release  
+
+on:
+  push:
+    branch:
+    - 'main' 
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔖 Get release
+        id: get_release
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          latest: true
+
+      - name: ⬆️ Echo Release latest
+        run: echo "release version ${{steps.get_release.outputs.tag_name}}
+        
