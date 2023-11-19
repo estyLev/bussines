@@ -19,5 +19,5 @@ jobs:
           latest: true
 
       - name: ⬆️ Echo Release latest
-        run: echo "release version ${{steps.get_release.outputs.tag_name}}
+        run: echo "release version ${{steps.get_release.outputs.tag_name}}"
         
