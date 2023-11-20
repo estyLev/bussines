@@ -9,6 +9,8 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: 🐬 Docker meta
         id: docker_meta
