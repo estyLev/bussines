@@ -9,19 +9,7 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      checks: write
-      contents: write
-      deployments: write
-      discussions: write
-      issues: write
-      pages: read
-      packages: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
+
     steps:
       - name: 🐬 Docker meta
         id: docker_meta
@@ -37,7 +25,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{github.actor}}
-          password: ${{github.token}}
+          password: ${{secret.GITHUBTOKEN}}
 
       - name: Build and push
         uses: docker/build-push-action@v5
