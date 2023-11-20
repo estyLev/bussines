@@ -10,14 +10,27 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - name: 🔖 Get release
-        id: get_release
-        uses: cardinalby/git-get-release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: 🐬 Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v5
         with:
-          latest: true
+          images: esterlev/bussines
 
       - name: ⬆️ Echo Release latest
-        run: echo "release version ${{steps.get_release.outputs.tag_name}}"
+        run: echo "docker tags ${{steps.docker_meta.outputs.tags}}"
+        run: echo "docker labels ${{steps.docker_meta.outputs.labels}}"
         
+      - name: 🔌Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        run : echo "name ${{github.actor}} pass ${{secrets.GITHUB_TOKEN}}"
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
