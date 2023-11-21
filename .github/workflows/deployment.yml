@@ -14,15 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      # - name: 🐳 Docker meta
-      #   id: docker_meta
-      #   uses: docker/metadata-action@v5
-      #   with:
-      #     images: esterlev/bussines
-
-      # - name: ⬆️ Echo Release latest
-      #   run: echo "docker tags ${{steps.docker_meta.outputs.tags}}"
-        
+     
         
       - name: 🔌Login to GitHub Container Registry
         uses: docker/login-action@v1
@@ -31,13 +23,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
   
-      # - name: :building_construction:Build Image
-      #   run: |
-      #       docker build . -t ghcr.io/skyvar/hawkeye360:latest
-      #       docker push  ghcr.io/skyvar/hawkeye360
-            
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          tags: ghcr.io/skyvar/hawkeye360:latest
-          # labels: ${{ steps.docker_meta.outputs.labels }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
