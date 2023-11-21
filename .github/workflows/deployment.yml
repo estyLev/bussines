@@ -37,4 +37,3 @@ on:
             image: ${{ ghcr.io/leahlandau/try:latest }}
             registry-username: ${{ github.actor }}
             registry-password: ${{ secrets.GITHUB_TOKEN }}
-​
