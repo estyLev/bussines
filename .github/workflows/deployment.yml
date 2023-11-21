@@ -39,6 +39,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
           tags: ghcr.io/skyvar/hawkeye360:latest
           # labels: ${{ steps.docker_meta.outputs.labels }}
