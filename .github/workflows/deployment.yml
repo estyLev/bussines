@@ -31,14 +31,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
   
-      - name: :building_construction:Build Image
-        run: |
-            docker build . -t ghcr.io/skyvar/hawkeye360:latest
-            docker push  ghcr.io/skyvar/hawkeye360
+      # - name: :building_construction:Build Image
+      #   run: |
+      #       docker build . -t ghcr.io/skyvar/hawkeye360:latest
+      #       docker push  ghcr.io/skyvar/hawkeye360
             
-      # - name: Build and push
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     context: .
-      #     tags: ${{ steps.docker_meta.outputs.tags }}
-      #     labels: ${{ steps.docker_meta.outputs.labels }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          tags: ghcr.io/skyvar/hawkeye360:latest
+          # labels: ${{ steps.docker_meta.outputs.labels }}
