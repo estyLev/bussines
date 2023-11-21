@@ -1,39 +1,44 @@
-name: :rocket:Publish
+name: 🔖 Echo release  
+
 on:
   push:
     branches: ['main']
-​env:
+
+env:
     REGISTRY: ghcr.io
     IMAGE_NAME: ${{ github.repository }}
-​jobs:
-    build-and-push-image:
-      runs-on: ubuntu-lateדא
-      permissions: write-all
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    permissions: write-all
     steps:
-        - name: :open_file_folder:Checkout repository
-          uses: actions/checkout@v4
-          
-        - name: :electric_plug:Login to the Container registry
-          uses: docker/login-action@v1
-          with:
-            registry: ${{ env.REGISTRY }}
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: 🐳 Docker meta
+      #   id: docker_meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: esterlev/bussines
+
+      # - name: ⬆️ Echo Release latest
+      #   run: echo "docker tags ${{steps.docker_meta.outputs.tags}}"
+        
+        
+      - name: 🔌Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
   
-        - name: :building_construction:Build Image
-          run: |
-            docker build . --tag ghcr.io/leahlandau/try:latest
-            docker push ghcr.io/leahlandau/try:latest
-        - name: 🔌 Log in to Azure
-          uses: azure/login@v1
-          with:
-            creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: :building_construction:Build Image
+        run: |
+            docker build . -t ghcr.io/skyvar/hawkeye360:latest
+            docker push  ghcr.io/skyvar/hawkeye360
             
-        - name: 🚀 Build and deploy Container App
-          uses: azure/container-apps-deploy-action@v1
-          with:
-            resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
-            name: ${{ functioapp1 }}
-            image: ${{ ghcr.io/leahlandau/try:latest }}
-            registry-username: ${{ github.actor }}
-            registry-password: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Build and push
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     tags: ${{ steps.docker_meta.outputs.tags }}
+      #     labels: ${{ steps.docker_meta.outputs.labels }}
