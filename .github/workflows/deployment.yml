@@ -15,7 +15,12 @@ jobs:
     permissions: write-all
     steps:
      
-        
+      - name: 🐳 Docker meta
+        id: docker_meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/skyvar/hawkeye360
+          
       - name: 🔌Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
