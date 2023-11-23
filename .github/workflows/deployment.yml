@@ -13,8 +13,7 @@ jobs:
     name: Upload Release Asset
     runs-on: ubuntu-latest
     permissions: 
-       contents: read
-       packages: write
+       contents: write
 
     steps:
      
