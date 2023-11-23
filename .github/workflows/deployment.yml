@@ -15,7 +15,7 @@ jobs:
     permissions: 
        contents: read
        packages: write
-       
+
     steps:
      
       - name: 🔖 Get release tag name
@@ -24,7 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          images: esterlev/bussines
+          latest: true
 
       - name: Set correct environment
         run: |
