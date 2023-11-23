@@ -9,9 +9,7 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
-    permissions: 
-       contents: read
-       packages: write
+    permissions: write-all
    
     steps:
       - name: 📂 Checkout code

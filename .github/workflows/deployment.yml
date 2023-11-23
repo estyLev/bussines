@@ -12,7 +12,10 @@ jobs:
   build:
     name: Upload Release Asset
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions: 
+       contents: read
+       packages: write
+       
     steps:
      
       - name: 🔖 Get release tag name
