@@ -65,7 +65,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          # registryUrl:  ghcr.io 
-          # registryUsername: ${{ github.actor }}
-          # registryPassword: ${{ secrets.GITHUB_TOKEN }}
-          imageToDeploy:  ghcr.io/esterlev/business:v3.0.0
+          registryUrl:  ghcr.io 
+          registryUsername: ${{ github.actor }}
+          registryPassword: ${{ secrets.GITHUB_TOKEN }}
+          imageToDeploy:  esterlev/business:v3.0.0
