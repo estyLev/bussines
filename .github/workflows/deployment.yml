@@ -66,6 +66,6 @@ jobs:
         with:
           resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP }}
           acrName:  business 
-          imageToDeploy:  ghcr.io/esterlev/business:${{steps.docker_meta.outputs.tags}}
+          imageToDeploy:  ghcr.io/esterlev/business:v3.0.1
           registryUsername: ${{ github.actor }}
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
