@@ -65,7 +65,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           resourceGroup: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          acrName:  business 
+          acrName:  EsterL@skyvar.co.il 
           imageToDeploy:  ghcr.io/esterlev/business:${{steps.docker_meta.outputs.tags}}
           registryUsername: ${{ github.actor }}
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
