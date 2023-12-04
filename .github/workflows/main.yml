@@ -34,6 +34,10 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+      
+      - name: 📁 Create ZIP Archive
+        run: |
+          zip -r server.zip .
 
       - name: ⬆️ Upload Release Asset
         id: upload-release-asset 
