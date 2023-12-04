@@ -69,3 +69,4 @@ jobs:
           registryUsername: ${{ github.actor }}
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
           imageToDeploy:  esterlev/business:v3.0.0
+          
