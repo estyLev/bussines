@@ -69,4 +69,4 @@ jobs:
           registryUrl:  ghcr.io 
           registryUsername: ${{ github.actor }}
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
-          imageToDeploy:  esterlev/business:latest
+          imageToDeploy:  ghcr.io/esterlev/business:latest
