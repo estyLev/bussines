@@ -49,14 +49,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
   
-
       - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
+        run: |
+          docker build . -t ${{steps.docker_meta.outputs.tags}}
+          docker push --all-tags ghcr.io/esterlev/business
+      # - name: Build and push
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     push: true
+      #     tags: ${{ steps.docker_meta.outputs.tags }}
+      #     labels: ${{ steps.docker_meta.outputs.labels }}
 
       - name: 🔌 Log in to Azure
         uses: azure/login@v1
