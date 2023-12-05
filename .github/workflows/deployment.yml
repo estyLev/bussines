@@ -51,7 +51,7 @@ jobs:
   
       - name: Build and push
         run: |
-          docker build . -t ${{steps.docker_meta.outputs.tags}}
+          docker build -f ../Dockerfile  -t ${{steps.docker_meta.outputs.tags}}
           docker push --all-tags ghcr.io/esterlev/business
       # - name: Build and push
       #   uses: docker/build-push-action@v5
