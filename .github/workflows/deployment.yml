@@ -53,6 +53,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
 
@@ -70,3 +71,4 @@ jobs:
           registryUsername: ${{ github.actor }}
           registryPassword: ${{ secrets.GITHUB_TOKEN }}
           imageToDeploy:  ghcr.io/esterlev/business:latest
+                          
