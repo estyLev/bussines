@@ -65,6 +65,8 @@ jobs:
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
+          cache-from: type=registry,ref=ghcr.io/t145/black-mirror:buildcache
+          cache-to: type=registry,ref=ghcr.io/t145/black-mirror:buildcache,mode=max
 
       - name: 🔌 Log in to Azure
         uses: azure/login@v1
